@@ -21,7 +21,7 @@ Ideal para quem quer estimar de forma prática e rápida o impacto das horas ext
 
 1. **Clone este repositório**
    ```bash
-   git clone https://github.com/SEU_USUARIO/calculadora_he.git
+   git clone https://github.com/Fael99i/calculadora_he.git
 
 2. **Instale as dependências**
     ```bash
