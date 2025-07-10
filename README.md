@@ -22,16 +22,24 @@ Ideal para quem quer estimar de forma prática e rápida o impacto das horas ext
 1. **Clone este repositório**
    ```bash
    git clone https://github.com/Fael99i/calculadora_he.git
+   ```
 
-2. **Instale as dependências**
-    ```bash
-    npm install
+2. **Entre na pasta do projeto**
+   ```bash
+   cd calculadora_he
+   ```
 
-3. **Rode o projeto**
+3. **Instale as dependências**
+   ```bash
+   npm install
+   ```
+
+4. **Rode o projeto**
    ```bash
    npm start
+   ```
 
-4. Acesse em http://localhost:3000 no navegador.
+5. **Acesse em [http://localhost:3000](http://localhost:3000) no navegador.**
 
 ---
 
