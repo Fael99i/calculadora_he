@@ -42,6 +42,6 @@ Ideal para quem quer estimar de forma prática e rápida o impacto das horas ext
 - CSS
 
 ## 👨‍💻 Autor
-Rafael - [Rafael - Fael99i](https://github.com/Fael99i)
+Rafael - [Fael99i](https://github.com/Fael99i)
 
 
