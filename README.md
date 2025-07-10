@@ -1,8 +1,10 @@
 # 🕒 Calculadora de Horas Extras
 
-Uma aplicação simples para calcular o valor das horas extras trabalhadas com diferentes adicionais (60%, 65% e 70%). 
+Um app simples e fácil de usar, com o objetivo de calcular o valor das horas extras trabalhadas com diferentes adicionais (60%, 65% e 70%). 
 
 Ideal para quem quer estimar de forma prática e rápida o impacto das horas extras no salário mensal.
+
+> ⚠️ **Observação:** Os valores calculados são apenas estimativas e podem não refletir cálculos oficiais ou legais. O uso desta ferramenta é de total responsabilidade e risco do usuário. Recomenda-se sempre consultar fontes oficiais ou profissionais especializados para obter resultados precisos.
 
 ---
 
