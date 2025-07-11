@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+# 🕒 Calculadora de Horas Extras
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um app simples e fácil de usar, com o objetivo de calcular o valor das horas extras trabalhadas com diferentes adicionais (60%, 65% e 70%). 
 
-## Available Scripts
+Ideal para quem quer estimar de forma prática e rápida o impacto das horas extras no salário mensal.
 
-In the project directory, you can run:
+> ⚠️ **Observação:** Os valores calculados são apenas estimativas e podem não refletir cálculos oficiais ou legais. O uso desta ferramenta é de total responsabilidade e risco do usuário. Recomenda-se sempre consultar fontes oficiais ou profissionais especializados para obter resultados precisos.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ✅ Funcionalidades
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Cálculo do valor da hora normal
+- Cálculo do valor das horas extras com:
+  - Adicional de 60%
+  - Adicional de 65%
+  - Adicional de 70%
+- Exibição do salário com e sem horas extras
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚙️ Como usar
 
-### `npm run build`
+1. **Clone este repositório**
+   ```bash
+   git clone https://github.com/Fael99i/calculadora_he.git
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Entre na pasta do projeto**
+   ```bash
+   cd calculadora_he
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Instale as dependências**
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Rode o projeto**
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+5. **Acesse em [http://localhost:3000](http://localhost:3000) no navegador.**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Tecnologias utilizadas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- TP
+- React
+- CSS
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 👨‍💻 Autor
+Rafael - [Fael99i](https://github.com/Fael99i)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
