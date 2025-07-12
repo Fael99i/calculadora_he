@@ -1,39 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useReducer } from 'react';
 import './App.css';
+import { RespostaApi } from './tipos/cotacao';
 
 function App() {
   const [horasNoMes, setHorasNoMes] = useState<string>('');
   const [salarioMensal, setSalarioMensal] = useState<string>('');
   const [horasExtras, setHorasExtras] = useState<string>('');
 
-  const [cotacaoUSD, setCotacaoUSD] = useState<number | null>(null);
+  const cotacaoUSD = useRef<number | null>(null);
   const [carregandoCotacao, setCarregandoCotacao] = useState<boolean>(true);
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
   useEffect(() => {
     setCarregandoCotacao(true);
     fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL')
-      .then((res) => res.json())
+      .then((res) => res.json() as Promise<RespostaApi>)
       .then((data) => {
         if (data?.USDBRL?.bid) {
           const usdBrl = parseFloat(data.USDBRL.bid);
           if (!isNaN(usdBrl) && usdBrl > 0) {
-            setCotacaoUSD(1 / usdBrl);
+            cotacaoUSD.current = 1 / usdBrl;
           } else {
-            setCotacaoUSD(null);
+            cotacaoUSD.current = null;
           }
         } else {
-          setCotacaoUSD(null);
+          cotacaoUSD.current = null;
         }
+        forceUpdate();
       })
       .catch(() => {
-        setCotacaoUSD(null);
+        cotacaoUSD.current = null;
+        forceUpdate();
       })
       .finally(() => setCarregandoCotacao(false));
   }, []);
 
   const emDolar = (valor: number): string => {
-    if (!cotacaoUSD) return '-';
-    return `US$ ${(valor * cotacaoUSD).toFixed(2)}`;
+    if (!cotacaoUSD.current) return '-';
+    return `US$ ${(valor * cotacaoUSD.current).toFixed(2)}`;
   };
 
   const horasNum = parseFloat(horasNoMes) || 0;
@@ -99,11 +103,11 @@ function App() {
 
       {carregandoCotacao ? (
         <p className="cotacao-info">Carregando cotação do dólar...</p>
-      ) : !cotacaoUSD ? (
+      ) : !cotacaoUSD.current ? (
         <p className="cotacao-erro">Cotação do dólar indisponível no momento.</p>
       ) : (
         <p className="cotacao-sucesso">
-          Cotação BRL → USD: 1 BRL = US$ {cotacaoUSD.toFixed(4)}
+          Cotação BRL → USD: 1 BRL = US$ {cotacaoUSD.current.toFixed(4)}
         </p>
       )}
 
