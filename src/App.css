@@ -1,116 +1,95 @@
-/* Fundo preto fosco cobrindo a tela toda */
-body, html {
-  height: 100%;
-  margin: 0;
-  background-color: #3a3a3a; /* preto com 85% de opacidade */
+body {
+  background-color: #121212;
+  color: #ddd;
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-/* Container branco semi-transparente */
 .container {
-  background-color: rgba(255, 255, 255, 0.1); /* branco transparente */
-  padding: 30px 40px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.7);
-  color: white;
-  box-sizing: border-box;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Título */
 .titulo {
-  font-size: 2.2rem;
-  margin-bottom: 25px;
   text-align: center;
-  font-weight: 700;
-  letter-spacing: 1px;
+  color: #00bcd4;
+  margin-bottom: 20px;
 }
 
-/* Formulário */
+.subtitulo {
+  margin-top: 30px;
+  color: #00bcd4;
+}
+
 .grupo-formulario {
-  margin-top: 18px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.grupo-formulario label {
-  font-weight: 600;
-  margin-bottom: 6px;
-  user-select: none;
-}
-
 .campo-input {
-  padding: 10px 12px;
+  padding: 8px;
   font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  background-color: rgba(255,255,255,0.15);
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.campo-input::placeholder {
-  color: rgba(255,255,255,0.6);
-}
-
-.campo-input:focus {
-  background-color: rgba(255,255,255,0.3);
-}
-
-/* Botão */
-.botao-adicionar {
-  margin-top: 28px;
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  background: linear-gradient(90deg, #4caf50, #087f23);
-  color: white;
-  font-weight: 700;
-  border: none;
-  border-radius: 10px;
-  transition: background 0.3s ease;
-}
-
-.botao-adicionar:hover {
-  background: linear-gradient(90deg, #087f23, #4caf50);
-}
-
-/* Subtítulos */
-.subtitulo {
-  margin-top: 35px;
-  font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-}
-
-/* Lista */
-ul {
-  padding-left: 20px;
-  margin-top: 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #1e1e1e;
   color: #ddd;
 }
 
-p {
-  color: #eee;
-  font-size: 1rem;
-  margin: 6px 0;
+.campo-input::placeholder {
+  color: #888;
 }
 
-/* Remove setas dos inputs type="number" no Chrome, Safari, Edge */
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+.cotacao-info {
+  opacity: 0.85;
+  margin-top: 10px;
+}
+
+.cotacao-sucesso {
+  opacity: 0.85;
+  margin-top: 10px;
+  color: #4caf50;
+}
+
+.cotacao-erro {
+  color: red;
+  margin-top: 10px;
+}
+
+.tabela-resultados {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.tabela-resultados th,
+.tabela-resultados td {
+  padding: 8px;
+  border-bottom: 1px solid #555;
+  text-align: center;
+}
+
+.tabela-resultados th {
+  background-color: #1e1e1e;
+}
+
+.tabela-resultados tr:nth-child(even) {
+  background-color: #181818;
+}
+
+/* Remove setas nos browsers baseados em Webkit (Chrome, Safari, Edge) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Remove setas dos inputs type="number" no Firefox */
+/* Remove setas no Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-  appearance: none;
+  appearance: textfield;
 }
-

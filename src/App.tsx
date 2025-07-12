@@ -25,8 +25,7 @@ function App() {
           setCotacaoUSD(null);
         }
       })
-      .catch((err) => {
-        console.error('Erro ao buscar cotação do dólar:', err);
+      .catch(() => {
         setCotacaoUSD(null);
       })
       .finally(() => setCarregandoCotacao(false));
@@ -34,7 +33,7 @@ function App() {
 
   const emDolar = (valor: number): string => {
     if (!cotacaoUSD) return '-';
-    return `US$ ${ (valor * cotacaoUSD).toFixed(2) }`;
+    return `US$ ${(valor * cotacaoUSD).toFixed(2)}`;
   };
 
   const horasNum = parseFloat(horasNoMes) || 0;
@@ -99,69 +98,63 @@ function App() {
       <h2 className="subtitulo">Resultados:</h2>
 
       {carregandoCotacao ? (
-        <p>Carregando cotação do dólar...</p>
+        <p className="cotacao-info">Carregando cotação do dólar...</p>
       ) : !cotacaoUSD ? (
-        <p style={{ color: 'red' }}>Cotação do dólar indisponível no momento.</p>
+        <p className="cotacao-erro">Cotação do dólar indisponível no momento.</p>
       ) : (
-        <p style={{ opacity: 0.85 }}>
-          Cotação BRL → USD: 1 BRL = {`US$ ${cotacaoUSD.toFixed(4)}`}
+        <p className="cotacao-sucesso">
+          Cotação BRL → USD: 1 BRL = US$ {cotacaoUSD.toFixed(4)}
         </p>
       )}
 
-      <table style={{
-        width: '100%',
-        marginTop: '20px',
-        borderCollapse: 'collapse',
-        color: '#ddd',
-        fontSize: '0.95rem'
-      }}>
+      <table className="tabela-resultados">
         <thead>
-          <tr style={{ borderBottom: '1px solid #555' }}>
-            <th style={{ textAlign: 'left', padding: '8px' }}>Descrição</th>
-            <th style={{ textAlign: 'right', padding: '8px' }}>R$</th>
-            <th style={{ textAlign: 'right', padding: '8px' }}>US$</th>
+          <tr>
+            <th>Descrição</th>
+            <th>R$</th>
+            <th>US$</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style={{ padding: '8px' }}>Valor da hora normal</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>R$ {valorHoraNormal.toFixed(2)}</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>{emDolar(valorHoraNormal)}</td>
+            <td>Valor da hora normal</td>
+            <td>R$ {valorHoraNormal.toFixed(2)}</td>
+            <td>{emDolar(valorHoraNormal)}</td>
           </tr>
           <tr>
-            <td style={{ padding: '8px' }}>Adicional 60%</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>R$ {totalExtras60.toFixed(2)}</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>{emDolar(totalExtras60)}</td>
+            <td>Adicional 60%</td>
+            <td>R$ {totalExtras60.toFixed(2)}</td>
+            <td>{emDolar(totalExtras60)}</td>
           </tr>
           <tr>
-            <td style={{ padding: '8px' }}>Adicional 65%</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>R$ {totalExtras65.toFixed(2)}</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>{emDolar(totalExtras65)}</td>
+            <td>Adicional 65%</td>
+            <td>R$ {totalExtras65.toFixed(2)}</td>
+            <td>{emDolar(totalExtras65)}</td>
           </tr>
           <tr>
-            <td style={{ padding: '8px' }}>Adicional 70%</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>R$ {totalExtras70.toFixed(2)}</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>{emDolar(totalExtras70)}</td>
+            <td>Adicional 70%</td>
+            <td>R$ {totalExtras70.toFixed(2)}</td>
+            <td>{emDolar(totalExtras70)}</td>
           </tr>
           <tr>
-            <td style={{ padding: '8px' }}>Salário sem horas extras</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>R$ {salarioNum.toFixed(2)}</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>{emDolar(salarioNum)}</td>
+            <td>Salário sem horas extras</td>
+            <td>R$ {salarioNum.toFixed(2)}</td>
+            <td>{emDolar(salarioNum)}</td>
           </tr>
           <tr>
-            <td style={{ padding: '8px' }}>Salário com extras (60%)</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>R$ {salarioComExtras60.toFixed(2)}</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>{emDolar(salarioComExtras60)}</td>
+            <td>Salário com extras (60%)</td>
+            <td>R$ {salarioComExtras60.toFixed(2)}</td>
+            <td>{emDolar(salarioComExtras60)}</td>
           </tr>
           <tr>
-            <td style={{ padding: '8px' }}>Salário com extras (65%)</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>R$ {salarioComExtras65.toFixed(2)}</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>{emDolar(salarioComExtras65)}</td>
+            <td>Salário com extras (65%)</td>
+            <td>R$ {salarioComExtras65.toFixed(2)}</td>
+            <td>{emDolar(salarioComExtras65)}</td>
           </tr>
           <tr>
-            <td style={{ padding: '8px' }}>Salário com extras (70%)</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>R$ {salarioComExtras70.toFixed(2)}</td>
-            <td style={{ textAlign: 'right', padding: '8px' }}>{emDolar(salarioComExtras70)}</td>
+            <td>Salário com extras (70%)</td>
+            <td>R$ {salarioComExtras70.toFixed(2)}</td>
+            <td>{emDolar(salarioComExtras70)}</td>
           </tr>
         </tbody>
       </table>
